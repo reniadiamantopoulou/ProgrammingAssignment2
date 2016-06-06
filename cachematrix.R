@@ -28,10 +28,8 @@ cacheSolve <- function(x, ...) {
         ## Checks if the inverse has already been calculated and if the matrix has not changed
         ## if the two conditions above are TRUE it retrieves the inverse stored in cached data.
         if(!is.null(inv)){
-            if (identical(x,inv) == TRUE){
-            message ("the matrix has not changed , get cached data")
+            message ("inverse has already been calculated , get cached data")
             return(inv)
-            }
         }
         mat.data <- x$get()
         inv <- solve(mat.data, ...)
